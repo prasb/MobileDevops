@@ -1,0 +1,136 @@
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+  
+
+<hr width="100" size="4">
+<p align="left">Upload Your APK File</p>
+<input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+
+<p id="demo"></p>
+    
+<script>
+
+function myFunction(){
+    var x = document.getElementById("myFile");
+    var txt = "";
+    if ('files' in x) {
+        if (x.files.length == 0) {
+            txt = "Select one or more files.";
+        } else {
+            for (var i = 0; i < x.files.length; i++) {
+                //txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+                var file = x.files[i];
+                if ('name' in file) {
+                    txt += "The name of the file is : " + file.name + "<br>";
+                }
+                if ('size' in file) {
+                    txt += "The size of the file is : " + file.size + " bytes <br>";
+                }
+            }
+        }
+    } 
+    else {
+        if (x.value == "") {
+            txt += "Select one or more files.";
+        } else {
+            txt += "The files property is not supported by your browser!";
+            txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+        }
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+<td><input type="checkbox" name="name1" />Samsung Galaxy S4</td>
+<td><input type="checkbox" name="name2" />Samsung Galaxy Note</td>
+<td><input type="checkbox" name="name2" />Motorola Droid 4</td>
+<td><input type="checkbox" name="name2" />HTC One X</td>
+<td><input type="checkbox" name="name2" />Android</td>
+
+<br/>
+<br/>
+<style>
+table {
+    font-family: arial, sans-serif;
+ '  border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>S.No</th>
+    <th>Emulator Name</th>
+    <th>Status</th>
+    <th>Screencast</th>
+	<th>Android Logs</th>
+	<th>Test Results</th>
+
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Samsung Galaxy S4</td>
+    <td>Not Running</td>
+	<td><a href="">View Test Execution</a></td>
+	<td><a href="">Click Here for Android Logs</a></td>
+	<td><a href="">Click Here for Test Results</a></td>
+
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Samsung Galaxy Note</td>
+     <td>Not Running</td>
+	<td><a href="">View Test Execution</a></td>
+	<td><a href="">Click Here for Android Logs</a></td>
+	<td><a href="">Click Here for Test Results</a></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Motorola Droid 4</td>
+     <td>Not Running</td>
+	<td><a href="">View Test Execution</a></td>
+	<td><a href="">Click Here for Android Logs</a></td>
+	<td><a href="">Click Here for Test Results</a></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>HTC One X</td>
+    <td>Not Running</td>
+	<td><a href="">View Test Execution</a></td>
+	<td><a href="">Click Here for Android Logs</a></td>
+	<td><a href="">Click Here for Test Results</a></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Android</td>
+     <td>Not Running</td>
+	<td><a href="">View Test Execution</a></td>
+	<td><a href="">Click Here for Android Logs</a></td>
+	<td><a href="">Click Here for Test Results</a></td>
+  </tr>
+</table>

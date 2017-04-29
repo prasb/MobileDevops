@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+    <title>My First HTML Page</title>
+	
+</head>
+
+<body>
+
+<h1 align= 'center'>Devops for Mobile</h1>
+<style>
+body {
+
+font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the links inside the tab */
+div.tab a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+div.tab a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+</head>
+<body>
+
+<p>Click on the links inside the tabbed menu:</p>
+
+<div class="tab">
+
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Ide')">Build App</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'London')">Emulator Testing</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Paris')">Real Device Testing</a>
+   <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Configure Back-End</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Generate Reports</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Publish Apps</a>
+   <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">View Analytics</a>
+   <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Monitor Servers</a>
+
+
+
+
+</div>
+
+<div id="London" class="tabcontent">
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+  
+
+<hr width="100" size="4">
+<p align="left">Upload Your APK File</p>
+<input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+
+<p id="demo"></p>
+    
+
+<script>
+
+function myFunction(){
+    var x = document.getElementById("myFile");
+    var txt = "";
+    if ('files' in x) {
+        if (x.files.length == 0) {
+            txt = "Select one or more files.";
+        } else {
+            for (var i = 0; i < x.files.length; i++) {
+                //txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+                var file = x.files[i];
+                if ('name' in file) {
+                    txt += "The name of the file is : " + file.name + "<br>";
+                }
+                if ('size' in file) {
+                    txt += "The size of the file is : " + file.size + " bytes <br>";
+                }
+            }
+        }
+    } 
+    else {
+        if (x.value == "") {
+            txt += "Select one or more files.";
+        } else {
+            txt += "The files property is not supported by your browser!";
+            txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+        }
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+<td><input type="checkbox" name="name1" />Samsung Galaxy S4</td>
+<td><input type="checkbox" name="name2" />Samsung Galaxy Note</td>
+<td><input type="checkbox" name="name2" />Motorola Droid 4</td>
+<td><input type="checkbox" name="name2" />HTC One X</td>
+<td><input type="checkbox" name="name2" />Android</td>
+
+<br/>
+<br/>
+<style>
+table {
+    font-family: arial, sans-serif;
+ '  border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+
+
+<!--  <iframe src="EmulatorTesting.html" width="555" height="200">
+   Sorry your browser does not support inline frames.
+</iframe> -->
+</div>
+
+<div id="Paris" class="tabcontent">
+
+<iframe src="EmulatorTesting.html" width="1200" height="700">
+   Sorry your browser does not support inline frames.
+</iframe>
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+<iframe src="http://smslocal.in/" width="1200" height="700">
+   Sorry your browser does not support inline frames.
+</iframe>
+  <h3>Delhi</h3>
+  <p>Delhi is the capital of india.</p>
+</div>
+
+
+</body>
+
+</html>
